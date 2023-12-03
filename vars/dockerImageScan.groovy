@@ -1,7 +1,7 @@
 def call(String project, String ImageTag, String hubUser){
     
     sh """   
-     trivy image ${hubUser}/${project}:latest > scan.txt
+     /root/.docker/cli-plugins/docker-scout quickview ${hubUser}/${project}:latest > scan.txt
      cat scan.txt
     """
 }
